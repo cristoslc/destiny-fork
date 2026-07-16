@@ -172,11 +172,11 @@ jobs:
         if: ${{ github.ref_type == 'tag' }}
 
   macos:
-    runs-on: macos-latest
+    runs-on: macos-14
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
 
@@ -191,7 +191,6 @@ jobs:
       - name: "Setup flutter"
         uses: subosito/flutter-action@v2
         with:
-          # set fixed stable version, to avoid surprises, when flutter upgrades
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
         
@@ -209,13 +208,14 @@ jobs:
       - name: "Run tests"
         run: "flutter test --coverage"
 
-      # TODO maybe this can be avoided by some project configuration,
-      # but running it locally doesn't change any files either.
       - name: "Enable macos desktop builds"
         run: "flutter config --enable-macos-desktop"
 
-      - name: "Build mac app"
+      - name: "Build mac app (arm64 native)"
         run: "flutter build macos lib/main_la.dart --debug --dart-define version=${{ env.DESTINY_VERSION }} --build-name ${{ env.DESTINY_VERSION }}"
+
+      - name: "Verify architecture"
+        run: "lipo -info build/macos/Build/Products/Debug/Destiny.app/Contents/MacOS/Destiny"
 
       - name: "Install create-dmg"
         run: "brew install create-dmg"
@@ -224,7 +224,7 @@ jobs:
         run: "create-dmg --app-drop-link 0 0 destiny_macos_debug_${{ env.DESTINY_VERSION }}.dmg build/macos/Build/Products/Debug/Destiny.app"
 
       - name: "Copy DMG"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-macos-${{ env.DESTINY_VERSION }}-unsigned"
           path: "./destiny_macos_debug_${{ env.DESTINY_VERSION }}.dmg"
