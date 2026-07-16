@@ -37,7 +37,39 @@ The codebase is pinned to Flutter 3.3.10 (Dart <3.4.0). Modern Flutter (3.22.x+)
 - `expand_widget` pinned fork uses old `TextTheme` names and `AnimatedSize(vsync:)`
 - `flutter-intro-slider` pinned fork uses `SystemChrome.setEnabledSystemUIOverlays`
 
+## Test strategy
+
+Existing coverage is thin (6 unit tests, 3 integration tests) and doesn't cover the ~40 UI files being migrated. The TextTheme rename is mechanical but risky — a missed rename compiles but renders wrong.
+
+### Coverage matrix
+
+| Path | Existing tests | Migration safety |
+|------|---------------|-----------------|
+| `lib/config/theme/custom_theme.dart` | None | Compiler catches wrong names |
+| `lib/views/desktop/` (14 files) | None | Compiler catches wrong names |
+| `lib/views/mobile/` (18 files) | None | Compiler catches wrong names |
+| `lib/widgets/` (4 files) | `prefs_edit_test.dart` | Compiler catches wrong names |
+| `lib/views/desktop//widgets/DTFileInfo.dart` | None | Compiler catches wrong names |
+| Pinned deps (`expand_widget`, `flutter-intro-slider`) | None | Must verify manually |
+
+The Dart compiler catches any TextTheme name that doesn't exist — a missed rename produces a compile error, not a silent bug. The risk is not missed renames but *wrong* renames (e.g., mapping `headline1` to the wrong new name). Snapshot/golden tests on key screens would catch rendering regressions.
+
+### Snapshot test plan
+
+Write golden tests for the 4 key screens before migration, then verify they still render identically after:
+
+1. **Send screen** — `lib/views/desktop/send/` (desktop) and `lib/views/mobile/send/` (mobile)
+2. **Receive screen** — `lib/views/desktop/receive/` and `lib/views/mobile/receive/`
+3. **Settings screen** — `lib/views/desktop/settings.dart`
+4. **Info screen** — `lib/views/mobile/Info.dart`
+
+Each golden test renders the widget tree, captures a screenshot, and compares against the stored golden. After migration, the goldens are updated if the visual output is correct.
+
 ## Approach
+
+### Step 0: Write snapshot tests (before migration)
+
+Write golden tests for the 4 key screens. Run them to establish baselines. Commit the goldens.
 
 ### Step 1: Bump CI Flutter pin
 
@@ -101,7 +133,11 @@ Files to update (from build errors):
 - `flutter-intro-slider` fork — needs update for `SystemChrome.setEnabledSystemUIOverlays` removal
 - `win32` — bump from `3.1.3` to compatible version
 
-### Step 5: Verify
+### Step 5: Update snapshot goldens
+
+Run the golden tests. If the visual output is correct, update the golden files. If not, fix the migration.
+
+### Step 6: Verify
 
 ```bash
 fvm flutter build macos --debug
@@ -113,4 +149,5 @@ lipo -info build/macos/Build/Products/Debug/Destiny.app/Contents/MacOS/Destiny
 
 - Pinned dependency forks (`expand_widget`, `flutter-intro-slider`) may need upstream updates or replacement
 - `window_size` plugin from `google/flutter-desktop-embedding` may have compatibility issues
+- Golden tests require a display server (not available in headless CI) — may need to run locally or use `flutter test --platform chrome` for widget tests
 - Full build can only be verified on Apple Silicon hardware or `macos-14` CI runner
