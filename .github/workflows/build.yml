@@ -50,7 +50,7 @@ jobs:
         run: "flutter analyze --write analyze.output || true"
 
       - name: "Style check"
-        run: "flutter format --set-exit-if-changed lib test"
+        run: "dart format --set-exit-if-changed lib test"
 
       - name: "Run tests"
         run: "flutter test --machine --coverage | tee tests.output"
@@ -114,7 +114,7 @@ jobs:
         run: "flutter analyze || true"
 
       - name: "Style check"
-        run: "flutter format --set-exit-if-changed lib test"
+        run: "dart format --set-exit-if-changed lib test"
 
       - name: "Run tests"
         run: "flutter test --coverage"
@@ -200,7 +200,7 @@ jobs:
         run: "flutter analyze || true"
 
       - name: "Style check"
-        run: "flutter format --set-exit-if-changed lib test"
+        run: "dart format --set-exit-if-changed lib test"
 
       - name: "Run tests"
         run: "flutter test --coverage"
@@ -267,7 +267,7 @@ jobs:
         run: "flutter analyze || true"
 
       - name: "Style check"
-        run: "flutter format --set-exit-if-changed lib test"
+        run: "dart format --set-exit-if-changed lib test"
 
       - name: "Run tests"
         run: "flutter test --coverage"
@@ -309,7 +309,7 @@ jobs:
         run: "flutter analyze || true"
 
       - name: "Style check"
-        run: "flutter format --set-exit-if-changed lib test"
+        run: "dart format --set-exit-if-changed lib test"
 
       - name: "Run tests"
         run: "flutter test --coverage"
