@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
 
       - name: "Set version string for release"
         run: echo DESTINY_VERSION=${{ github.ref_name }} >> $GITHUB_ENV
@@ -37,7 +37,6 @@ jobs:
       - name: "Setup flutter"
         uses: subosito/flutter-action@v2
         with:
-          # set fixed stable version, to avoid surprises, when flutter upgrades
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
         
@@ -62,7 +61,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-      # We are building debug version APK which can be manually install, however it cannot be reused for upload to store
       - name: "Build debug apk"
         run: "flutter build apk lib/main_la.dart --dart-define version=${{ env.DESTINY_VERSION }} --build-name ${{ env.DESTINY_VERSION }} --debug"
 
@@ -70,7 +68,7 @@ jobs:
         run: mv ./build/app/outputs/flutter-apk/app-debug.apk destiny_android_${{ env.DESTINY_VERSION }}.apk
 
       - name: "Copy apk"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-android-${{ env.DESTINY_VERSION }}-unsigned"
           path: destiny_android_${{ env.DESTINY_VERSION }}.apk
@@ -89,7 +87,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
 
@@ -104,7 +102,6 @@ jobs:
       - name: "Setup flutter"
         uses: subosito/flutter-action@v2
         with:
-          # set fixed stable version, to avoid surprises, when flutter upgrades
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
         
@@ -150,14 +147,14 @@ jobs:
           mv Destiny-x86_64.AppImage destiny_linux_${{ env.DESTINY_VERSION }}.AppImage
 
       - name: "Upload zip"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-linux-${{ env.DESTINY_VERSION }}-unsigned"
           path: "destiny_linux_${{ env.DESTINY_VERSION }}.tar.gz"
           if-no-files-found: "error"
 
       - name: "Upload AppImage"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-linux-${{ env.DESTINY_VERSION }}-appimage-unsigned"
           path: "destiny_linux_${{ env.DESTINY_VERSION }}.AppImage"
@@ -243,7 +240,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
 
@@ -258,7 +255,6 @@ jobs:
       - name: "Setup flutter"
         uses: subosito/flutter-action@v2
         with:
-          # set fixed stable version, to avoid surprises, when flutter upgrades
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
         
@@ -267,8 +263,6 @@ jobs:
       - name: "Fetch flutter dependencies"
         run: "flutter pub get"
 
-      # TODO remove the || true when this should be enforced
-      # Right now it is just informational
       - name: "Lint"
         run: "flutter analyze || true"
 
@@ -288,7 +282,7 @@ jobs:
 
     steps:
       - name: "Checkout"
-        uses: "actions/checkout@v3"
+        uses: "actions/checkout@v4"
         with:
           submodules: "recursive"
 
@@ -303,7 +297,6 @@ jobs:
       - name: "Setup flutter"
         uses: subosito/flutter-action@v2
         with:
-          # set fixed stable version, to avoid surprises, when flutter upgrades
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
         
@@ -347,14 +340,14 @@ jobs:
           echo y | flutter pub run msix:create --version $version --output-path . --build-windows false --output-name destiny_windows_${{ env.DESTINY_VERSION }}
 
       - name: "Upload zip"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-windows-${{ env.DESTINY_VERSION }}-unsigned"
           path: "destiny_windows_${{ env.DESTINY_VERSION }}.zip"
           if-no-files-found: "error"
 
       - name: "Upload msix"
-        uses: "actions/upload-artifact@v2"
+        uses: "actions/upload-artifact@v4"
         with:
           name: "destiny-windows-${{ env.DESTINY_VERSION }}-unsigned-msix"
           path: "destiny_windows_${{ env.DESTINY_VERSION }}.msix"
