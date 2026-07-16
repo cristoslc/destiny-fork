@@ -277,6 +277,11 @@ jobs:
       - name: "Run tests"
         run: "flutter test --coverage || true"
 
+      - name: "Setup Go"
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
       - name: "Build ios app (only for simulator)"
         run: |
           export GOROOT=`go env GOROOT` 
