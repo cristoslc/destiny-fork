@@ -35,9 +35,12 @@ class ButtonWithBackground extends StatelessWidget {
                 child: Text(title,
                     style: TextStyle(
                         fontSize: fontSize,
-                        fontFamily:
-                            Theme.of(context).textTheme.displayMedium?.fontFamily,
-                        color: Theme.of(context).textTheme.displayMedium?.color)),
+                        fontFamily: Theme.of(context)
+                            .textTheme
+                            .displayMedium
+                            ?.fontFamily,
+                        color:
+                            Theme.of(context).textTheme.displayMedium?.color)),
               ),
             ],
           ));

@@ -41,7 +41,8 @@ class NavbarTap extends StatelessWidget {
                       width: 45.0,
                       height: 25.0,
                     ),
-                    Text(title, style: Theme.of(context).textTheme.headlineLarge),
+                    Text(title,
+                        style: Theme.of(context).textTheme.headlineLarge),
                     route == currentRoute
                         ? Container(
                             height: 2.0,

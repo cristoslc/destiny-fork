@@ -39,7 +39,8 @@ class DTRowGroupButton extends StatelessWidget {
             ? DTButtonWithIcon(
                 label: 'Copy',
                 textStyle: TextStyle(
-                  fontFamily: Theme.of(context).textTheme.headlineMedium?.fontFamily,
+                  fontFamily:
+                      Theme.of(context).textTheme.headlineMedium?.fontFamily,
                   color: Theme.of(context).textTheme.headlineMedium?.color,
                   fontSize: 12.0,
                 ),

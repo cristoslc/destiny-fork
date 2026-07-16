@@ -158,8 +158,10 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
 
   @override
   Widget build(BuildContext context) {
-    final headingStyle =
-        Theme.of(context).textTheme.headlineSmall?.copyWith(fontFamily: MONTSERRAT);
+    final headingStyle = Theme.of(context)
+        .textTheme
+        .headlineSmall
+        ?.copyWith(fontFamily: MONTSERRAT);
 
     return Container(
         margin: EdgeInsets.only(top: this.marginTop),

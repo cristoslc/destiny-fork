@@ -29,7 +29,8 @@ class SelectAFileUI extends StatelessWidget {
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             ButtonWithIcon(
                 fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
-                fontFamily: Theme.of(context).textTheme.displayMedium!.fontFamily,
+                fontFamily:
+                    Theme.of(context).textTheme.displayMedium!.fontFamily,
                 label: SELECT_A_FILE,
                 handleSelectFile: handleSelectFile,
                 icon: Image.asset(
@@ -45,7 +46,8 @@ class SelectAFileUI extends StatelessWidget {
             if (dartIO.Platform.isIOS)
               ButtonWithIcon(
                   fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
-                  fontFamily: Theme.of(context).textTheme.displayMedium!.fontFamily,
+                  fontFamily:
+                      Theme.of(context).textTheme.displayMedium!.fontFamily,
                   label: SELECT_A_MEDIA,
                   handleSelectFile: handleSelectMedia,
                   icon: Image.asset(

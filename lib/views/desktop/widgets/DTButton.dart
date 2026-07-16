@@ -34,7 +34,8 @@ class _CustomAppBarState extends State<DTButton> {
         },
         style: TextButton.styleFrom(
             backgroundColor: Theme.of(context).scaffoldBackgroundColor),
-        child: Text('$title', style: Theme.of(context).textTheme.headlineMedium),
+        child:
+            Text('$title', style: Theme.of(context).textTheme.headlineMedium),
       ),
     );
   }
