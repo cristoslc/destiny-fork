@@ -57,7 +57,7 @@ We recommend [verifying every downloaded file](https://github.com/LeastAuthority
 ## Cloning
 
 ```bash
-git clone --recurse-submodules git@github.com:LeastAuthority/destiny.git
+git clone --recurse-submodules git@github.com:cristoslc/destiny.git
 ```
 
 ## Building
