@@ -25,7 +25,7 @@ class DTInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     final appSettings = getIt<AppSettings>();
 
-    var dataStyle = Theme.of(context).textTheme.headline6;
+    var dataStyle = Theme.of(context).textTheme.headlineSmall;
     var titleStyle = dataStyle?.copyWith(fontFamily: MONTSERRAT);
 
     const editButtonWidth = 80.0;

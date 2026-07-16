@@ -32,7 +32,8 @@ class Button extends StatelessWidget {
           height: this.height.h,
           child: TextButton(
             onPressed: () => handleClicked(),
-            child: Text('$title', style: Theme.of(context).textTheme.bodyText2),
+            child:
+                Text('$title', style: Theme.of(context).textTheme.bodyMedium),
           ),
         ));
   }

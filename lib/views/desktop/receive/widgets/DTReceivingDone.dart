@@ -19,7 +19,7 @@ class DTReceivingDone extends StatelessWidget {
       children: [
         Heading(
           title: FILE_DOWNLOAD_SUCCESSFUL,
-          textStyle: Theme.of(context).textTheme.headline1,
+          textStyle: Theme.of(context).textTheme.displayLarge,
         ),
         Expanded(
             child: Column(
@@ -33,7 +33,7 @@ class DTReceivingDone extends StatelessWidget {
             Heading(
               title: DOWNLOADED_TO + '\n',
               path: path,
-              textStyle: Theme.of(context).textTheme.bodyText1,
+              textStyle: Theme.of(context).textTheme.bodyLarge,
               key: Key(SETTINGS_SCREEN_HEADING),
             ),
             DTButton(DONE, () {

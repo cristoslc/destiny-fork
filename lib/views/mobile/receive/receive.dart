@@ -57,7 +57,7 @@ class ReceiveScreen extends StatelessWidget {
               title: ENTER_THE_CODE_IN_ORDER_TO_RECEIVE_THE_FILE,
               textAlign: TextAlign.left,
               marginTop: 0,
-              textStyle: Theme.of(context).textTheme.headline6,
+              textStyle: Theme.of(context).textTheme.headlineSmall,
               key: Key(RECEIVE_SCREEN_HEADING),
             ),
           ),

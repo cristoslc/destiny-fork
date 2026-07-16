@@ -24,7 +24,7 @@ class DTReceiveConfirmation extends StatelessWidget {
             Heading(
               title: READY_TO_DOWNLOAD,
               textAlign: TextAlign.center,
-              textStyle: Theme.of(context).textTheme.headline1,
+              textStyle: Theme.of(context).textTheme.displayLarge,
               // key: Key('Timing_Progress'),
             ),
             SizedBox(
@@ -38,7 +38,7 @@ class DTReceiveConfirmation extends StatelessWidget {
             Heading(
               title: PLEASE_KEEP_THE_APP_OPEN_UNTIL_FILE_IS_DOWNLOADED,
               marginTop: 16.0,
-              textStyle: Theme.of(context).textTheme.headline6,
+              textStyle: Theme.of(context).textTheme.headlineSmall,
               key: Key(APP_MUST_REMAIN_OPEN),
             ),
             SizedBox(

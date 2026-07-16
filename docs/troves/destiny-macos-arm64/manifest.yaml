@@ -1,0 +1,48 @@
+trove_id: destiny-macos-arm64
+created: 2026-07-15
+tags:
+  - destiny
+  - magic-wormhole
+  - macos
+  - apple-silicon
+  - arm64
+  - flutter
+  - go
+  - ffi
+sources:
+  - slug: upstream-readme
+    description: Upstream README — Apple Silicon status
+    fetch_date: 2026-07-15
+  - slug: xcode-excluded-archs
+    description: Xcode project — EXCLUDED_ARCHS
+    fetch_date: 2026-07-15
+  - slug: go-layer
+    description: Go wormhole-william — darwin/arm64 support
+    fetch_date: 2026-07-15
+  - slug: flutter-apple-silicon-docs
+    description: Flutter Apple Silicon docs
+    fetch_date: 2026-07-15
+  - slug: flutter-engine-arm64-issues
+    description: Flutter engine arm64 build issues
+    fetch_date: 2026-07-15
+  - slug: ci-config
+    description: CI build configuration
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-60113
+    description: ARM macOS target umbrella (CLOSED)
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-103386
+    description: Engine on Apple Silicon without Rosetta (OPEN)
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-69157
+    description: macOS artifacts with ARM slice (CLOSED)
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-101138
+    description: gen_snapshot as arm64 binary (CLOSED)
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-175320
+    description: Debugging on Apple Silicon fails (SOLVED)
+    fetch_date: 2026-07-15
+  - slug: flutter-issue-69221
+    description: FlutterMacOS.framework arm64 (CLOSED)
+    fetch_date: 2026-07-15

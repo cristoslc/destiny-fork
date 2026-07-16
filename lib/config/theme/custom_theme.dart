@@ -41,46 +41,46 @@ class CustomTheme {
       colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: CustomColors.babyPowder, brightness: Brightness.dark),
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
             fontSize: 25.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT_EXTRA_BOLD),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
             fontSize: 20.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT_MEDIUM),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
             fontSize: 20.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT),
-        headline4: TextStyle(
+        headlineLarge: TextStyle(
             fontSize: 17.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT_MEDIUM),
-        headline5: TextStyle(
+        headlineMedium: TextStyle(
             fontSize: 17.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT_LIGHT),
-        headline6: TextStyle(
+        headlineSmall: TextStyle(
             fontSize: 14.0.sp,
             color: CustomColors.babyPowder,
             fontFamily: MONTSERRAT_LIGHT),
-        subtitle1: TextStyle(
+        titleLarge: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 14.sp,
           fontFamily: MONTSERRAT_MEDIUM,
         ),
-        subtitle2: TextStyle(
+        titleMedium: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 12.sp,
           fontFamily: MONTSERRAT,
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 12.sp,
           fontFamily: MONTSERRAT_LIGHT,
         ),
-        bodyText2: TextStyle(
+        bodyMedium: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 12.sp,
           fontFamily: MONTSERRAT,
@@ -107,49 +107,48 @@ class CustomTheme {
     return darkThemeMobile.copyWith(
       cardColor: CustomColors.lightBlue,
       dialogBackgroundColor: CustomColors.lightBlack,
-      backgroundColor: CustomColors.darkBlue,
       textTheme: TextTheme(
-        headline1: TextStyle(
+        displayLarge: TextStyle(
           color: CustomColors.babyPowder,
           fontSize: 25.0,
           fontFamily: MONTSERRAT_THIN,
         ),
-        headline2: TextStyle(
+        displayMedium: TextStyle(
           color: CustomColors.babyPowder,
           fontSize: 20.0,
           fontFamily: MONTSERRAT_MEDIUM,
         ),
-        headline3: TextStyle(
+        displaySmall: TextStyle(
           color: CustomColors.babyPowder,
           fontSize: 17.0,
           fontFamily: MONTSERRAT_EXTRA_BOLD,
         ),
-        headline4: TextStyle(
+        headlineLarge: TextStyle(
           color: CustomColors.babyPowder,
           fontSize: 14.0,
           fontFamily: MONTSERRAT_SEMI_BOLD,
         ),
-        headline5: TextStyle(
+        headlineMedium: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 17.0,
           fontFamily: MONTSERRAT,
         ),
-        headline6: TextStyle(
+        headlineSmall: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 17.0,
           fontFamily: MONTSERRAT_THIN,
         ),
-        bodyText1: TextStyle(
+        bodyLarge: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 22.0,
           fontFamily: MONTSERRAT_THIN,
         ),
-        subtitle1: TextStyle(
+        titleLarge: TextStyle(
           color: CustomColors.babyPowderLight,
           fontSize: 17.0,
           fontFamily: MONTSERRAT_LIGHT,
         ),
-        subtitle2: TextStyle(
+        titleMedium: TextStyle(
           color: CustomColors.black,
           fontSize: 17.0,
           fontFamily: MONTSERRAT_LIGHT,

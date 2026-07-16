@@ -14,8 +14,8 @@ class DTDropAFile extends StatelessWidget {
           textAlign: TextAlign.center,
           textStyle: TextStyle(
             fontSize: 40.0,
-            fontFamily: Theme.of(context).textTheme.headline1?.fontFamily,
-            color: Theme.of(context).textTheme.headline1?.color,
+            fontFamily: Theme.of(context).textTheme.displayLarge?.fontFamily,
+            color: Theme.of(context).textTheme.displayLarge?.color,
           ),
           // key: Key('Timing_Progress'),
         ),

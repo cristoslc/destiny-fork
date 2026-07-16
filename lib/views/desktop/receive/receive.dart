@@ -24,7 +24,7 @@ class ReceiveScreen extends StatelessWidget {
             children: [
               Heading(
                 title: ENTER_THE_CODE_IN_ORDER_TO_RECEIVE_THE_FILE,
-                textStyle: Theme.of(context).textTheme.headline1,
+                textStyle: Theme.of(context).textTheme.displayLarge,
               ),
               Expanded(
                 child: Column(
@@ -32,7 +32,7 @@ class ReceiveScreen extends StatelessWidget {
                   children: [
                     CodeInputBox(
                         width: 400.0,
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: Theme.of(context).textTheme.bodyLarge,
                         controller: state.controller,
                         codeChanged: state.codeChanged,
                         onEnterPressed: (_) {
