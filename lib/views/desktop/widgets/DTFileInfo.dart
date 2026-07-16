@@ -18,7 +18,7 @@ class DTFileInfo extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               '$fileName',
-              style: Theme.of(context).textTheme.headline3,
+              style: Theme.of(context).textTheme.displaySmall,
             ),
           ),
         ),
@@ -26,7 +26,7 @@ class DTFileInfo extends StatelessWidget {
           title: '(${fileSize?.readableSize})',
           textAlign: TextAlign.center,
           marginTop: 0,
-          textStyle: Theme.of(context).textTheme.subtitle1,
+          textStyle: Theme.of(context).textTheme.titleLarge,
           key: Key('File_Info_Description'),
         ),
       ],

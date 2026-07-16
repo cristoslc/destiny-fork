@@ -70,7 +70,7 @@ class _SettingsState extends State<Settings> {
                           title:
                               SELECT_DEFAULT_SAVE_DESTINATION_FOR_THIS_DEVICE,
                           textAlign: TextAlign.center,
-                          textStyle: Theme.of(context).textTheme.headline1,
+                          textStyle: Theme.of(context).textTheme.displayLarge,
                           // key: Key('Timing_Progress'),
                         ),
                         SizedBox(

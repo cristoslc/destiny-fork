@@ -38,7 +38,7 @@ class RowGroupButton extends StatelessWidget {
         !isCodeGenerating
             ? ButtonWithIcon(
                 fontSize: 10.0.sp,
-                fontFamily: Theme.of(context).textTheme.headline2!.fontFamily,
+                fontFamily: Theme.of(context).textTheme.displayMedium!.fontFamily,
                 label: COPY,
                 handleSelectFile: () {
                   Clipboard.setData(ClipboardData(text: code));

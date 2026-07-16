@@ -16,17 +16,17 @@ class DTSelectAFile extends StatelessWidget {
         children: [
           Heading(
             title: SEND_FILES_SIMPLE_SECURE_FAST,
-            textStyle: Theme.of(context).textTheme.headline1,
+            textStyle: Theme.of(context).textTheme.displayLarge,
           ),
           Column(
             children: [
               Heading(
                 title: DROP_A_FILE,
-                textStyle: Theme.of(context).textTheme.headline5,
+                textStyle: Theme.of(context).textTheme.headlineMedium,
               ),
               Heading(
                 title: OR,
-                textStyle: Theme.of(context).textTheme.headline5,
+                textStyle: Theme.of(context).textTheme.headlineMedium,
                 marginTop: 26.0,
               ),
             ],

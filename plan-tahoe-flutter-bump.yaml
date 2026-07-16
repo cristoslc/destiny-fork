@@ -1,0 +1,6 @@
+tasks:
+  - id: tahoe-flutter-bump
+    kind: multi-file-fix
+    model: ollama-cloud/deepseek-v4-flash:cloud
+    agent: build
+    prompt: prompts/tahoe-flutter-bump.md

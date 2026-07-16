@@ -45,7 +45,7 @@ class ExpandableTextBox extends StatelessWidget {
                     Heading(
                         title: errorMessage ?? errorMessage.toString(),
                         textStyle: TextStyle(
-                          color: Theme.of(context).textTheme.headline1?.color,
+                          color: Theme.of(context).textTheme.displayLarge?.color,
                           fontSize: fontSize,
                           fontFamily: COURIER,
                         ),

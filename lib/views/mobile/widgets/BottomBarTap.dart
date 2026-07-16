@@ -61,7 +61,7 @@ class BottomBarTap extends StatelessWidget {
                       ),
                       Text(
                         label,
-                        style: theme.textTheme.subtitle2,
+                        style: theme.textTheme.titleMedium,
                       )
                     ],
                   )),
