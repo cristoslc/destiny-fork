@@ -6,9 +6,6 @@ on:
       - "v*"
     branches:
       - "main"
-  pull_request:
-    branches:
-      - "main"
 
 # https://docs.flutter.dev/development/tools/sdk/releases?tab=linux
 env:
