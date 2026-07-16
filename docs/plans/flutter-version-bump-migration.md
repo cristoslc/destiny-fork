@@ -65,17 +65,40 @@ Write golden tests for the 4 key screens before migration, then verify they stil
 
 Each golden test renders the widget tree, captures a screenshot, and compares against the stored golden. After migration, the goldens are updated if the visual output is correct.
 
+**Display requirement:** Golden tests on macOS need a running window server. CI on `macos-14` runners provides this. Locally, the operator must run tests from a GUI session (not SSH). If no display is available, goldens are generated on CI and downloaded for review.
+
 ## Approach
 
 ### Step 0: Write snapshot tests (before migration)
 
 Write golden tests for the 4 key screens. Run them to establish baselines. Commit the goldens.
 
-### Step 1: Bump CI Flutter pin
+### Step 1: Install fvm locally
+
+```bash
+brew install fvm
+fvm install 3.22.3
+fvm flutter pub get
+```
+
+All subsequent local `flutter` commands use `fvm flutter`.
+
+### Step 2: File tech-debt entry for pinned dependency forks
+
+Write `docs/tech-debt/pinned-dependency-forks.md` documenting the three pinned forks (`expand_widget`, `flutter-intro-slider`, `window_size`) and their known compatibility issues.
+
+### Step 3: Fix pinned dependencies first (before Flutter bump)
+
+- `win32` — bump from `3.1.3` to compatible version
+- `expand_widget` fork — spike: check if upstream has a compatible version, or if the fork can be updated
+- `flutter-intro-slider` fork — spike: check if upstream has a compatible version, or if the fork can be updated
+- `window_size` — spike: check if the pinned commit is compatible with Flutter 3.22, or if an alternative exists
+
+### Step 4: Bump CI Flutter pin
 
 `.github/workflows/build.yml`: `FLUTTER_VERSION: "3.3.10"` → `"3.22.3"`
 
-### Step 2: TextTheme rename (bulk)
+### Step 5: TextTheme rename (bulk)
 
 Files to update (from build errors):
 - `lib/config/theme/custom_theme.dart`
@@ -119,25 +142,18 @@ Files to update (from build errors):
 - `lib/widgets/ExpandableTextBox.dart`
 - `lib/widgets/buttons/Button.dart`
 - `lib/widgets/prefs_edit.dart`
-- `lib/views/desktop//widgets/DTFileInfo.dart` (duplicate path)
 
-### Step 3: Fix custom_theme.dart
+### Step 6: Fix custom_theme.dart
 
 - `BottomAppBarTheme(...)` → `BottomAppBarThemeData(...)`
 - `headline1` → `displayLarge` (and all other renames)
 - Remove `backgroundColor:` parameter
 
-### Step 4: Fix or replace pinned dependencies
-
-- `expand_widget` fork — needs update for `AnimatedSize(vsync:)` removal and TextTheme renames
-- `flutter-intro-slider` fork — needs update for `SystemChrome.setEnabledSystemUIOverlays` removal
-- `win32` — bump from `3.1.3` to compatible version
-
-### Step 5: Update snapshot goldens
+### Step 7: Update snapshot goldens
 
 Run the golden tests. If the visual output is correct, update the golden files. If not, fix the migration.
 
-### Step 6: Verify
+### Step 8: Verify
 
 ```bash
 fvm flutter build macos --debug
