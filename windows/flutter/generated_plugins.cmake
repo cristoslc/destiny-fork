@@ -5,6 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   dart_wormhole_william
   desktop_drop
+  msix
   permission_handler_windows
   url_launcher_windows
   window_size
