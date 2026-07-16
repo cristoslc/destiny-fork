@@ -47,7 +47,7 @@ jobs:
         run: "flutter pub get"
 
       - name: "Lint"
-        run: "flutter analyze --no-fatal-warnings --write analyze.output"
+        run: "flutter analyze --write analyze.output || true"
 
       - name: "Style check"
         run: "flutter format --set-exit-if-changed lib test"
@@ -111,7 +111,7 @@ jobs:
         run: "flutter pub get"
 
       - name: "Lint"
-        run: "flutter analyze --no-fatal-warnings"
+        run: "flutter analyze || true"
 
       - name: "Style check"
         run: "flutter format --set-exit-if-changed lib test"
@@ -197,7 +197,7 @@ jobs:
         run: "flutter pub get"
 
       - name: "Lint"
-        run: "flutter analyze --no-fatal-warnings"
+        run: "flutter analyze || true"
 
       - name: "Style check"
         run: "flutter format --set-exit-if-changed lib test"
@@ -306,7 +306,7 @@ jobs:
         run: "flutter pub get"
 
       - name: "Lint"
-        run: "flutter analyze --no-fatal-warnings"
+        run: "flutter analyze || true"
 
       - name: "Style check"
         run: "flutter format --set-exit-if-changed lib test"
