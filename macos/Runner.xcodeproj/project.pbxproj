@@ -40,62 +40,6 @@
 			remoteGlobalIDString = 33CC111A2044C6BA0003C045;
 			remoteInfo = FLX;
 		};
-		A0BDB1F5D4BFFCEBE3365697C6F73C8C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = A0BDB1F5D4BFFCEBE3365697C6F73C8C;
-			remoteInfo = dart_wormhole_william;
-		};
-		AE49E4444A4D3B9A252C7FCF8484A8DF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = AE49E4444A4D3B9A252C7FCF8484A8DF;
-			remoteInfo = desktop_drop;
-		};
-		54A00AF9F830F355D8FD8F6A4387F6A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = 54A00AF9F830F355D8FD8F6A4387F6A2;
-			remoteInfo = package_info_plus;
-		};
-		2BAA54CCA2AE7F6D5A99F3FF42E3978E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BAA54CCA2AE7F6D5A99F3FF42E3978E;
-			remoteInfo = path_provider_macos;
-		};
-		AB5EE685B22D01885ADD930538E8DD3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = AB5EE685B22D01885ADD930538E8DD3C;
-			remoteInfo = shared_preferences_foundation;
-		};
-		18785DB831C0FA5904C6F1414D53CB5B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = 18785DB831C0FA5904C6F1414D53CB5B;
-			remoteInfo = url_launcher_macos;
-		};
-		05182360095B71696DA415A85DD7ECD2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = 05182360095B71696DA415A85DD7ECD2;
-			remoteInfo = wakelock_macos;
-		};
-		F6EEF2B78A1F5F1DAD8848871924135C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Pods project */;
-			proxyType = 1;
-			remoteGlobalIDString = F6EEF2B78A1F5F1DAD8848871924135C;
-			remoteInfo = window_size;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -257,14 +201,6 @@
 			);
 			dependencies = (
 				33CC11202044C79F0003C045 /* PBXTargetDependency */,
-				A0BDB1F5D4BFFCEBE3365697C6F73C8C /* PBXTargetDependency */,
-				AE49E4444A4D3B9A252C7FCF8484A8DF /* PBXTargetDependency */,
-				54A00AF9F830F355D8FD8F6A4387F6A2 /* PBXTargetDependency */,
-				2BAA54CCA2AE7F6D5A99F3FF42E3978E /* PBXTargetDependency */,
-				AB5EE685B22D01885ADD930538E8DD3C /* PBXTargetDependency */,
-				18785DB831C0FA5904C6F1414D53CB5B /* PBXTargetDependency */,
-				05182360095B71696DA415A85DD7ECD2 /* PBXTargetDependency */,
-				F6EEF2B78A1F5F1DAD8848871924135C /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -425,38 +361,6 @@
 			isa = PBXTargetDependency;
 			target = 33CC111A2044C6BA0003C045 /* Flutter Assemble */;
 			targetProxy = 33CC111F2044C79F0003C045 /* PBXContainerItemProxy */;
-		};
-		A0BDB1F5D4BFFCEBE3365697C6F73C8C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = A0BDB1F5D4BFFCEBE3365697C6F73C8C /* PBXContainerItemProxy */;
-		};
-		AE49E4444A4D3B9A252C7FCF8484A8DF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = AE49E4444A4D3B9A252C7FCF8484A8DF /* PBXContainerItemProxy */;
-		};
-		54A00AF9F830F355D8FD8F6A4387F6A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = 54A00AF9F830F355D8FD8F6A4387F6A2 /* PBXContainerItemProxy */;
-		};
-		2BAA54CCA2AE7F6D5A99F3FF42E3978E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = 2BAA54CCA2AE7F6D5A99F3FF42E3978E /* PBXContainerItemProxy */;
-		};
-		AB5EE685B22D01885ADD930538E8DD3C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = AB5EE685B22D01885ADD930538E8DD3C /* PBXContainerItemProxy */;
-		};
-		18785DB831C0FA5904C6F1414D53CB5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = 18785DB831C0FA5904C6F1414D53CB5B /* PBXContainerItemProxy */;
-		};
-		05182360095B71696DA415A85DD7ECD2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = 05182360095B71696DA415A85DD7ECD2 /* PBXContainerItemProxy */;
-		};
-		F6EEF2B78A1F5F1DAD8848871924135C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			targetProxy = F6EEF2B78A1F5F1DAD8848871924135C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
