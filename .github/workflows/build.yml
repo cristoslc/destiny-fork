@@ -208,6 +208,11 @@ jobs:
       - name: "Enable macos desktop builds"
         run: "flutter config --enable-macos-desktop"
 
+      - name: "Setup Go"
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+
       - name: "Build mac app (arm64 native)"
         run: "flutter build macos lib/main_la.dart --debug --dart-define version=${{ env.DESTINY_VERSION }} --build-name ${{ env.DESTINY_VERSION }}"
 
