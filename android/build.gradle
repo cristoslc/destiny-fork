@@ -22,6 +22,13 @@ rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
     project.evaluationDependsOn(':app')
+    project.plugins.withId('com.android.library') {
+        project.android {
+            if (namespace == null) {
+                namespace project.group.toString()
+            }
+        }
+    }
 }
 
 task clean(type: Delete) {
