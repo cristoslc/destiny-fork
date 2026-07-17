@@ -23,7 +23,7 @@ class DTCodeGeneration extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).dialogBackgroundColor,
+        color: Theme.of(context).dialogTheme.backgroundColor,
         borderRadius: BorderRadius.all(Radius.circular(4.0)),
         border: Border.all(width: 2.0, color: CustomColors.purple),
       ),
@@ -36,7 +36,7 @@ class DTCodeGeneration extends StatelessWidget {
             width: 500.0,
             child: Heading(
               title: SEND_THE_SELECTED_CODE_BY_SHARING_THE_CODE_WITH_RECIPIENT,
-              textStyle: Theme.of(context).textTheme.headline1,
+              textStyle: Theme.of(context).textTheme.displayLarge,
             ),
           )),
           DTFileInfo(fileSize, fileName),
@@ -46,7 +46,7 @@ class DTCodeGeneration extends StatelessWidget {
             child: Heading(
               title: THE_TRANSFER_WILL_AUTO,
               marginTop: 40.0,
-              textStyle: Theme.of(context).textTheme.subtitle1,
+              textStyle: Theme.of(context).textTheme.titleLarge,
               key: Key(GENERATION_DESCRIPTION),
             ),
           ),

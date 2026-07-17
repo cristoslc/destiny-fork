@@ -22,7 +22,7 @@ class DTSendingProgress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).dialogBackgroundColor,
+          color: Theme.of(context).dialogTheme.backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(4.0)),
           border: Border.all(width: 2.0, color: CustomColors.purple),
         ),
@@ -35,7 +35,7 @@ class DTSendingProgress extends StatelessWidget {
               children: [
                 Heading(
                   title: SENDING_IN_PROGRESS,
-                  textStyle: Theme.of(context).textTheme.headline1,
+                  textStyle: Theme.of(context).textTheme.displayLarge,
                   // key: Key('Timing_Progress'),
                 ),
                 SizedBox(
@@ -53,7 +53,7 @@ class DTSendingProgress extends StatelessWidget {
                 Heading(
                   title: remainingTimeString,
                   marginTop: 16.0,
-                  textStyle: Theme.of(context).textTheme.subtitle1,
+                  textStyle: Theme.of(context).textTheme.titleLarge,
                   key: Key('Timing_Progress'),
                 ),
                 Container(
@@ -62,7 +62,7 @@ class DTSendingProgress extends StatelessWidget {
                     marginTop: 40.0,
                     title:
                         'App must remain open until the transfer is complete.',
-                    textStyle: Theme.of(context).textTheme.headline5,
+                    textStyle: Theme.of(context).textTheme.headlineMedium,
                     key: Key('APP_MUST_REMAIN_OPEN'),
                   ),
                 ),

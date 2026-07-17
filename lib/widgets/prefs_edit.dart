@@ -70,7 +70,7 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
 
   Future<void> showInformationDialog(BuildContext context) async {
     var theme = Theme.of(context);
-    var smallTextStyle = theme.textTheme.bodyText2?.copyWith(fontSize: 11.0);
+    var smallTextStyle = theme.textTheme.bodyMedium?.copyWith(fontSize: 11.0);
 
     final List<Widget> defaultButtons = indexed(defaultValues).expand((value) {
       return [
@@ -101,7 +101,7 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
                           TextFormField(
                             key: Key("formField"),
                             controller: _textEditingController,
-                            style: theme.textTheme.bodyText2,
+                            style: theme.textTheme.bodyMedium,
                             autofocus: true,
                             validator: this.validator,
                             decoration: InputDecoration(
@@ -119,14 +119,14 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
                   )),
               title: Text(
                 EDIT + " " + title,
-                style: theme.textTheme.headline3,
+                style: theme.textTheme.displaySmall,
               ),
               actions: <Widget>[
                 ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text(CANCEL, style: theme.textTheme.bodyText2),
+                  child: Text(CANCEL, style: theme.textTheme.bodyMedium),
                   key: Key("cancel"),
                 ),
                 ElevatedButton(
@@ -140,7 +140,7 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
                   style: theme.elevatedButtonTheme.style?.copyWith(
                       backgroundColor:
                           MaterialStateProperty.all(theme.primaryColor)),
-                  child: Text(OK, style: theme.textTheme.bodyText2),
+                  child: Text(OK, style: theme.textTheme.bodyMedium),
                   key: Key("ok"),
                 ),
               ],
@@ -158,8 +158,10 @@ class _EditableStringPrefsState extends State<EditableStringPrefs> {
 
   @override
   Widget build(BuildContext context) {
-    final headingStyle =
-        Theme.of(context).textTheme.headline6?.copyWith(fontFamily: MONTSERRAT);
+    final headingStyle = Theme.of(context)
+        .textTheme
+        .headlineSmall
+        ?.copyWith(fontFamily: MONTSERRAT);
 
     return Container(
         margin: EdgeInsets.only(top: this.marginTop),

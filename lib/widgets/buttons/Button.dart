@@ -17,7 +17,7 @@ class Button extends StatelessWidget {
   Widget build(BuildContext context) {
     Color? color = disabled == true
         ? Theme.of(context).primaryColor
-        : Theme.of(context).textTheme.bodyText2!.color;
+        : Theme.of(context).textTheme.bodyMedium!.color;
     return Container(
       margin: EdgeInsets.only(top: 22.0.h),
       decoration: BoxDecoration(
@@ -33,7 +33,7 @@ class Button extends StatelessWidget {
           child: Text('$title',
               style: Theme.of(context)
                   .textTheme
-                  .bodyText2
+                  .bodyMedium
                   ?.copyWith(color: color))),
     );
   }

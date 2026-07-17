@@ -54,7 +54,7 @@ class _SettingsState extends State<Settings> {
                 key: Key(SEND_SCREEN_BODY),
                 child: Container(
                     height: double.infinity,
-                    color: Theme.of(context).dialogBackgroundColor,
+                    color: Theme.of(context).dialogTheme.backgroundColor,
                     padding:
                         EdgeInsets.only(left: 8.0, right: 8.0, top: 16.0.h),
                     child: Column(
@@ -70,7 +70,7 @@ class _SettingsState extends State<Settings> {
                           title:
                               SELECT_DEFAULT_SAVE_DESTINATION_FOR_THIS_DEVICE,
                           textAlign: TextAlign.center,
-                          textStyle: Theme.of(context).textTheme.headline1,
+                          textStyle: Theme.of(context).textTheme.displayLarge,
                           // key: Key('Timing_Progress'),
                         ),
                         SizedBox(
