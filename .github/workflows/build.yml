@@ -328,11 +328,12 @@ jobs:
 
       - name: "Copy VC++ redistributables"
         run: |
-          $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/")[0] | Select -expand FullName) + "/.."
+          $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/" -ErrorAction SilentlyContinue)[0] | Select -expand FullName) + "/.."
           echo $vcredistpath
           cp $vcredistpath/msvcp140.dll build/windows/runner/Release
           cp $vcredistpath/vcruntime140.dll build/windows/runner/Release
           cp $vcredistpath/vcruntime140_1.dll build/windows/runner/Release
+        continue-on-error: true
 
       - name: "Zip executable and libraries"
         run: |
