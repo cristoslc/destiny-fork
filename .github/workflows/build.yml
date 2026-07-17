@@ -13,7 +13,7 @@ on:
 
 # https://docs.flutter.dev/development/tools/sdk/releases?tab=linux
 env:
-  FLUTTER_VERSION: "3.22.3"
+  FLUTTER_VERSION: "stable"
   FLUTTER_BRANCH: "stable"
 
 jobs:
@@ -306,9 +306,6 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           channel: ${{ env.FLUTTER_BRANCH }}
 
-      - name: "Install VS 2019 build tools"
-        run: choco install visualstudio2019-workload-vctools -y --no-progress
-
       - run: flutter --version
 
       - name: "Fetch flutter dependencies"
@@ -328,24 +325,16 @@ jobs:
 
       - name: "Copy VC++ redistributables"
         run: |
-          try {
-            $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/" -ErrorAction SilentlyContinue)[0] | Select -expand FullName) + "/.."
-            echo $vcredistpath
-            cp $vcredistpath/msvcp140.dll build/windows/runner/Release -ErrorAction SilentlyContinue
-            cp $vcredistpath/vcruntime140.dll build/windows/runner/Release -ErrorAction SilentlyContinue
-            cp $vcredistpath/vcruntime140_1.dll build/windows/runner/Release -ErrorAction SilentlyContinue
-          } catch {
-            echo "VC++ redistributables not found, skipping"
-          }
+          $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/")[0] | Select -expand FullName) + "/.."
+          echo $vcredistpath
+          cp $vcredistpath/msvcp140.dll build/windows/runner/Release
+          cp $vcredistpath/vcruntime140.dll build/windows/runner/Release
+          cp $vcredistpath/vcruntime140_1.dll build/windows/runner/Release
 
       - name: "Zip executable and libraries"
         run: |
-          if (Test-Path build/windows/runner/Release) {
-            cp -r build/windows/runner/Release destiny_windows_${{ env.DESTINY_VERSION }}
-            7z a destiny_windows_${{ env.DESTINY_VERSION }}.zip "destiny_windows_${{ env.DESTINY_VERSION }}"
-          } else {
-            echo "Build output not found, skipping zip"
-          }
+          cp -r build/windows/runner/Release destiny_windows_${{ env.DESTINY_VERSION }}
+          7z a destiny_windows_${{ env.DESTINY_VERSION }}.zip "destiny_windows_${{ env.DESTINY_VERSION }}"
 
       - name: "Create windows installer"
         run: |
