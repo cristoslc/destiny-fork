@@ -13,7 +13,7 @@ on:
 
 # https://docs.flutter.dev/development/tools/sdk/releases?tab=linux
 env:
-  FLUTTER_VERSION: "stable"
+  FLUTTER_VERSION: "3.44.6"
   FLUTTER_BRANCH: "stable"
 
 jobs:
