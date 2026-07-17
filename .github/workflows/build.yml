@@ -284,7 +284,7 @@ jobs:
           flutter build ios lib/main_la.dart --debug --simulator --no-codesign --dart-define version=${{ env.DESTINY_VERSION }} --build-name ${{ env.DESTINY_VERSION }}
 
   windows:
-    runs-on: windows-2019
+    runs-on: windows-latest
 
     steps:
       - name: "Checkout"
