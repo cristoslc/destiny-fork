@@ -150,7 +150,7 @@ class FileIOHandler {
                         ?.joinToString(separator = File.separator)
                 val parts = directory?.split(":")
                 if (parts != null) {
-                    if (parts?.size > 1) {
+                    if (parts.size > 1) {
                         "${parts.drop(1).joinToString(separator = ":")}"
                     } else {
                         "$directory"
