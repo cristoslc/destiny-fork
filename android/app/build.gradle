@@ -41,7 +41,6 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 import com.android.build.OutputFile
 
 android {
-    namespace "com.leastauthority.destiny"
     compileSdkVersion 34
 
     sourceSets {
