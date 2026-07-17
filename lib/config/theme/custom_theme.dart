@@ -37,7 +37,8 @@ class CustomTheme {
       progressIndicatorTheme: ProgressIndicatorThemeData(
           color: primaryColor, linearTrackColor: CustomColors.superLightPurple),
       disabledColor: CustomColors.babyPowderLight,
-      bottomAppBarTheme: BottomAppBarThemeData(color: CustomColors.lighterBlack),
+      bottomAppBarTheme:
+          BottomAppBarThemeData(color: CustomColors.lighterBlack),
       colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: CustomColors.babyPowder, brightness: Brightness.dark),
       textTheme: TextTheme(
