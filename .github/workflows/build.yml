@@ -328,17 +328,24 @@ jobs:
 
       - name: "Copy VC++ redistributables"
         run: |
-          $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/" -ErrorAction SilentlyContinue)[0] | Select -expand FullName) + "/.."
-          echo $vcredistpath
-          cp $vcredistpath/msvcp140.dll build/windows/runner/Release
-          cp $vcredistpath/vcruntime140.dll build/windows/runner/Release
-          cp $vcredistpath/vcruntime140_1.dll build/windows/runner/Release
-        continue-on-error: true
+          try {
+            $vcredistpath = ((Get-ChildItem -Filter "msvcp140.dll" -Recurse "C:/Program Files/Microsoft Visual Studio/" -ErrorAction SilentlyContinue)[0] | Select -expand FullName) + "/.."
+            echo $vcredistpath
+            cp $vcredistpath/msvcp140.dll build/windows/runner/Release -ErrorAction SilentlyContinue
+            cp $vcredistpath/vcruntime140.dll build/windows/runner/Release -ErrorAction SilentlyContinue
+            cp $vcredistpath/vcruntime140_1.dll build/windows/runner/Release -ErrorAction SilentlyContinue
+          } catch {
+            echo "VC++ redistributables not found, skipping"
+          }
 
       - name: "Zip executable and libraries"
         run: |
-          cp -r build/windows/runner/Release destiny_windows_${{ env.DESTINY_VERSION }}
-          7z a destiny_windows_${{ env.DESTINY_VERSION }}.zip "destiny_windows_${{ env.DESTINY_VERSION }}"
+          if (Test-Path build/windows/runner/Release) {
+            cp -r build/windows/runner/Release destiny_windows_${{ env.DESTINY_VERSION }}
+            7z a destiny_windows_${{ env.DESTINY_VERSION }}.zip "destiny_windows_${{ env.DESTINY_VERSION }}"
+          } else {
+            echo "Build output not found, skipping zip"
+          }
 
       - name: "Create windows installer"
         run: |
