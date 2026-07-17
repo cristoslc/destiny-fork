@@ -33,7 +33,7 @@ class ErrorUI extends StatelessWidget {
           Heading(
             title: errorTitle ?? errorTitle.toString(),
             textAlign: TextAlign.center,
-            textStyle: Theme.of(context).textTheme.subtitle1,
+            textStyle: Theme.of(context).textTheme.titleLarge,
           ),
           Heading(
               marginTop: 20,
@@ -42,8 +42,8 @@ class ErrorUI extends StatelessWidget {
               isVisible: error != '',
               textStyle: TextStyle(
                 fontSize: 14.0.sp,
-                fontFamily: Theme.of(context).textTheme.subtitle2?.fontFamily,
-                color: Theme.of(context).textTheme.subtitle2?.color,
+                fontFamily: Theme.of(context).textTheme.titleMedium?.fontFamily,
+                color: Theme.of(context).textTheme.titleMedium?.color,
               )),
           SizedBox(height: 10.0),
           ExtensiveMobileErrorExpandable(
@@ -98,7 +98,7 @@ class ExtensiveMobileErrorExpandable extends StatelessWidget {
             title: SEE_DETAILS,
             textStyle: TextStyle(
               color: Theme.of(context).primaryColor,
-              fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
+              fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
               fontFamily: MONTSERRAT_THIN,
             ),
           ),

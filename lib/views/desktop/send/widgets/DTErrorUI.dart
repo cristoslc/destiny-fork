@@ -36,7 +36,7 @@ class DTErrorUI extends StatelessWidget {
     return Container(
         decoration: showBoxDecoration == true
             ? BoxDecoration(
-                color: Theme.of(context).dialogBackgroundColor,
+                color: Theme.of(context).dialogTheme.backgroundColor,
                 borderRadius: BorderRadius.all(Radius.circular(4.0)),
                 border: Border.all(width: 2.0, color: CustomColors.purple),
               )
@@ -48,8 +48,8 @@ class DTErrorUI extends StatelessWidget {
             textAlign: TextAlign.center,
             textStyle: TextStyle(
                 fontFamily: MONTSERRAT_MEDIUM,
-                fontSize: Theme.of(context).textTheme.headline1?.fontSize,
-                color: Theme.of(context).textTheme.headline1?.color),
+                fontSize: Theme.of(context).textTheme.displayLarge?.fontSize,
+                color: Theme.of(context).textTheme.displayLarge?.color),
           ),
           Heading(
               marginTop: 20,
@@ -59,7 +59,7 @@ class DTErrorUI extends StatelessWidget {
               textStyle: TextStyle(
                 fontSize: 17.0,
                 fontFamily: COURIER,
-                color: Theme.of(context).textTheme.headline1?.color,
+                color: Theme.of(context).textTheme.displayLarge?.color,
               )),
           ExtensiveDesktopErrorExpandable(
             error: this.error,
@@ -95,7 +95,7 @@ class ExtensiveDesktopErrorExpandable extends StatelessWidget {
             title: SEE_DETAILS,
             textStyle: TextStyle(
               color: Theme.of(context).primaryColor,
-              fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
+              fontSize: Theme.of(context).textTheme.titleLarge?.fontSize,
               fontFamily: COURIER,
             ),
           ),

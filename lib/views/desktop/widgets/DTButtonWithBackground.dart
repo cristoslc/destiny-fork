@@ -35,7 +35,7 @@ class DTButtonWithBackground extends StatelessWidget {
             backgroundColor: disabled
                 ? Theme.of(context).primaryColorDark
                 : Theme.of(context).primaryColor),
-        child: Text('$title', style: Theme.of(context).textTheme.subtitle2),
+        child: Text('$title', style: Theme.of(context).textTheme.titleMedium),
       ),
     );
   }

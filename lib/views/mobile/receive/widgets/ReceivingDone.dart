@@ -23,14 +23,14 @@ class ReceivingDone extends StatelessWidget {
           title: FILE_DOWNLOADED_SUCCESSFULLY + '\n',
           path: path,
           textAlign: TextAlign.left,
-          textStyle: Theme.of(context).textTheme.headline6,
+          textStyle: Theme.of(context).textTheme.headlineSmall,
           // key: Key('Timing_Progress'),
         ),
         FileInfo(fileSize, fileName),
         Heading(
           title: FILE_RECEIVED,
           marginTop: 16.0.h,
-          textStyle: Theme.of(context).textTheme.headline1,
+          textStyle: Theme.of(context).textTheme.displayLarge,
           key: Key('Timing_Progress'),
         ),
         Image.asset(

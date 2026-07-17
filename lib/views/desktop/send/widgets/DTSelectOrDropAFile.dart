@@ -30,7 +30,7 @@ class _DTSelectOrDropAFile extends State<DTSelectOrDropAFile> {
     return Container(
       color: widget.dragEntered
           ? Color(0xff3A2655)
-          : Theme.of(context).dialogBackgroundColor,
+          : Theme.of(context).dialogTheme.backgroundColor,
       child: DropTarget(
         onDragDone: (detail) async {
           // TODO this is a workaround for the desktop_drop plugin calling onDragDone

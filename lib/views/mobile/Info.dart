@@ -68,7 +68,7 @@ class _InfoState extends State<Info> {
                         title: DEFAULT_SAVE_DESTINATION,
                         textAlign: TextAlign.left,
                         marginTop: 10.0.h,
-                        textStyle: Theme.of(context).textTheme.headline6,
+                        textStyle: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Heading(
                         textAlign: TextAlign.left,
@@ -83,7 +83,7 @@ class _InfoState extends State<Info> {
                         title: VERSION,
                         textAlign: TextAlign.left,
                         marginTop: 10.0.h,
-                        textStyle: Theme.of(context).textTheme.headline6,
+                        textStyle: Theme.of(context).textTheme.headlineSmall,
                       ),
                       Heading(
                         textAlign: TextAlign.left,
@@ -98,7 +98,7 @@ class _InfoState extends State<Info> {
                         title: ENV_SETTINGS,
                         textAlign: TextAlign.left,
                         marginTop: 10.0.h,
-                        textStyle: Theme.of(context).textTheme.headline6,
+                        textStyle: Theme.of(context).textTheme.headlineSmall,
                       ),
                       EditableStringPrefs(
                         appSettings.mailboxUrl,

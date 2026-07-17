@@ -57,7 +57,7 @@ We recommend [verifying every downloaded file](https://github.com/LeastAuthority
 ## Cloning
 
 ```bash
-git clone --recurse-submodules git@github.com:cristoslc/destiny.git
+git clone --recurse-submodules git@github.com:cristoslc/destiny-fork.git
 ```
 
 ## Building
@@ -113,7 +113,6 @@ docker-compose up -d
 ## Known Issues:
 - Flutter currently [does not support x86 for android builds](https://github.com/flutter/flutter/issues/9253),
 so x86 emulators or devices are not supported.
-- MacOS M1/M2 (arm64) chip build is not supported yet.
 
 ### Other configuration/ notes
 

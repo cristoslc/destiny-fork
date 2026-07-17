@@ -16,7 +16,7 @@ class SendingDone extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-          color: Theme.of(context).dialogBackgroundColor,
+          color: Theme.of(context).dialogTheme.backgroundColor,
           borderRadius: BorderRadius.all(Radius.circular(4.0)),
           border: Border.all(width: 2.0, color: CustomColors.purple),
         ),
@@ -27,7 +27,7 @@ class SendingDone extends StatelessWidget {
             Heading(
               title: FILE_TRANSFER_SUCCESSFULLY,
               textAlign: TextAlign.center,
-              textStyle: Theme.of(context).textTheme.headline1,
+              textStyle: Theme.of(context).textTheme.displayLarge,
               // key: Key('Timing_Progress'),
             ),
             DTFileInfo(fileSize, fileName),
@@ -35,7 +35,7 @@ class SendingDone extends StatelessWidget {
               title: FILE_SENT,
               textAlign: TextAlign.center,
               marginTop: 16.0,
-              textStyle: Theme.of(context).textTheme.headline1,
+              textStyle: Theme.of(context).textTheme.displayLarge,
               key: Key('Timing_Progress'),
             ),
             Image.asset(

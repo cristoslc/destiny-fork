@@ -23,13 +23,14 @@ class SelectAFileUI extends StatelessWidget {
             title: SEND_FILES_SIMPLE_SECURE_FAST,
             textAlign: TextAlign.left,
             marginTop: 0,
-            textStyle: Theme.of(context).textTheme.headline6,
+            textStyle: Theme.of(context).textTheme.headlineSmall,
             key: Key(SEND_SCREEN_HEADING),
           ),
           Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
             ButtonWithIcon(
-                fontSize: Theme.of(context).textTheme.headline2!.fontSize,
-                fontFamily: Theme.of(context).textTheme.headline2!.fontFamily,
+                fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
+                fontFamily:
+                    Theme.of(context).textTheme.displayMedium!.fontFamily,
                 label: SELECT_A_FILE,
                 handleSelectFile: handleSelectFile,
                 icon: Image.asset(
@@ -44,8 +45,9 @@ class SelectAFileUI extends StatelessWidget {
 
             if (dartIO.Platform.isIOS)
               ButtonWithIcon(
-                  fontSize: Theme.of(context).textTheme.headline2!.fontSize,
-                  fontFamily: Theme.of(context).textTheme.headline2!.fontFamily,
+                  fontSize: Theme.of(context).textTheme.displayMedium!.fontSize,
+                  fontFamily:
+                      Theme.of(context).textTheme.displayMedium!.fontFamily,
                   label: SELECT_A_MEDIA,
                   handleSelectFile: handleSelectMedia,
                   icon: Image.asset(

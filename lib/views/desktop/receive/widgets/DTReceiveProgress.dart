@@ -30,7 +30,7 @@ class _ReceiveProgressState extends State<DTReceiveProgress> {
         Heading(
           title: RECEIVING,
           textAlign: TextAlign.center,
-          textStyle: Theme.of(context).textTheme.headline1,
+          textStyle: Theme.of(context).textTheme.displayLarge,
           // key: Key('Timing_Progress'),
         ),
         Column(
@@ -47,7 +47,7 @@ class _ReceiveProgressState extends State<DTReceiveProgress> {
               title: '${widget.remainingTimeString}',
               textAlign: TextAlign.center,
               marginTop: 16.0,
-              textStyle: Theme.of(context).textTheme.subtitle1,
+              textStyle: Theme.of(context).textTheme.titleLarge,
               key: Key('Timing_Progress'),
             ),
             SizedBox(
@@ -55,7 +55,7 @@ class _ReceiveProgressState extends State<DTReceiveProgress> {
               child: Heading(
                 title: THE_APP_MUST_REMAIN_OPEN_UNTIL_THE_TRANSFER_IS_COMPLETED,
                 marginTop: 16.0,
-                textStyle: Theme.of(context).textTheme.headline6,
+                textStyle: Theme.of(context).textTheme.headlineSmall,
                 key: Key(APP_MUST_REMAIN_OPEN),
               ),
             )
