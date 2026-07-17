@@ -24,7 +24,7 @@ subprojects {
     project.evaluationDependsOn(':app')
     project.plugins.withId('com.android.library') {
         project.android {
-            if (namespace == null) {
+            if (namespace == null && project.group != null && project.group.toString().trim() != '') {
                 namespace project.group.toString()
             }
         }
