@@ -9,6 +9,7 @@ on:
   pull_request:
     branches:
       - "main"
+      - "flutter-bump/root"
 
 # https://docs.flutter.dev/development/tools/sdk/releases?tab=linux
 env:
